@@ -10,14 +10,10 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.os.Handler;
 import android.widget.Switch;
-import android.widget.Toast;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,10 +47,13 @@ public class MainActivity extends AppCompatActivity {
         spinner = findViewById(R.id.spinner);
         button = findViewById(R.id.button);
         progressBar = findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.INVISIBLE);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
+
                 int radioButtonID = radioGroup.getCheckedRadioButtonId();
                 RadioButton radioButton = radioGroup.findViewById(radioButtonID);
                 sharePreferencesEditor = sharedPreferences.edit();
@@ -64,16 +63,16 @@ public class MainActivity extends AppCompatActivity {
                 sharePreferencesEditor.putString("tamanhoCamisa", spinner.getSelectedItem().toString());
                 sharePreferencesEditor.putBoolean("receberNotificacoes", switchNotificacoes.isChecked());
                 sharePreferencesEditor.apply();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent(MainActivity.this, ConfirmationActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }, 3000);
 
-                Intent intent = new Intent(MainActivity.this, ConfirmationActivity.class);
-                startActivity(intent);
-                finish();
             }
         });
-    }
-    private void carregarProgressBar()
-    {
-        button.setEnabled(false);
-
     }
 }
