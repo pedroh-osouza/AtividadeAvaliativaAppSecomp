@@ -6,89 +6,215 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/periwinkle"
+    android:background="@color/background_dracula"
+    android:padding="16dp"
     android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         >
 
         <ImageView
+            android:layout_marginTop="32dp"
             android:id="@+id/logoUnemat"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             android:src="@mipmap/logo_unemat_menor"/>
 
         <TextView
+            android:textColor="@color/foreground_dracula"
             android:id="@+id/textViewCadastro"
             android:textSize="20sp"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Cadastro"
             app:layout_constraintTop_toBottomOf="@id/logoUnemat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp"
             android:gravity="center" />
 
         <EditText
+            android:textColor="@color/foreground_dracula"
+            android:textColorHint="@color/foreground_dracula"
             android:id="@+id/edtTextNome"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="Informe seu Nome"
             app:layout_constraintTop_toBottomOf="@id/textViewCadastro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp"
             />
 
         <EditText
             android:id="@+id/edtTextEmail"
-            android:layout_width="match_parent"
+            android:textColor="@color/foreground_dracula"
+            android:textColorHint="@color/foreground_dracula"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="Informe seu Email"
             app:layout_constraintTop_toBottomOf="@+id/edtTextNome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp"
             />
 
         <RadioGroup
             android:id="@+id/radioGroup"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtTextEmail">
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/edtTextEmail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp">
             <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:id="@+id/radioEstudante"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/foreground_dracula"
                 android:text="Estudante Unemat"/>
             <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:id="@+id/radioServidor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/foreground_dracula"
                 android:text="Servidor Unemat"/>
             <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:id="@+id/Visitante"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/foreground_dracula"
                 android:text="Visitante"/>
         </RadioGroup>
 
-        <Spinner
-            android:id="@+id/spinner"
+        <TextView
+            android:id="@+id/textViewTamanhoCamisa"
+            android:textColor="@color/foreground_dracula"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/radioGroup"
-            app:layout_constraintEnd_toStartOf="parent"
+            android:text="Escolha o tamanho da camisa:"
+            android:layout_marginTop="32dp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTamanhoCamisa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp"
             android:entries="@array/tamanhosCamisas">
         </Spinner>
 
+        <TextView
+            android:id="@+id/textViewInteresse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/foreground_dracula"
+            android:text="Áreas de Interesse:"
+            android:layout_marginTop="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinner" />
+
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:textColor="@color/foreground_dracula"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Desenvolvimento Front-End"
+            app:layout_constraintTop_toBottomOf="@id/textViewInteresse"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"/>
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:textColor="@color/foreground_dracula"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Desenvolvimento Back-End"
+            app:layout_constraintTop_toBottomOf="@id/checkBox1"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"/>
+
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:textColor="@color/foreground_dracula"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Devops"
+            app:layout_constraintTop_toBottomOf="@id/checkBox2"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"/>
+
+        <CheckBox
+            android:id="@+id/checkBox4"
+            android:textColor="@color/foreground_dracula"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Web Scraping"
+            app:layout_constraintTop_toBottomOf="@id/checkBox3"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"/>
+
+        <CheckBox
+            android:id="@+id/checkBox5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data Science"
+            android:textColor="@color/foreground_dracula"
+            app:layout_constraintTop_toBottomOf="@id/checkBox4"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"/>
+
+        <CheckBox
+            android:id="@+id/checkBox6"
+            android:layout_width="wrap_content"
+            android:textColor="@color/foreground_dracula"
+            android:layout_height="wrap_content"
+            android:text="Engenharia de Dados"
+            app:layout_constraintTop_toBottomOf="@id/checkBox5"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"/>
+
         <Button
             android:id="@+id/button"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/spinner"
+            app:layout_constraintTop_toBottomOf="@id/checkBox6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp"
             android:text="Submeter Inscrição"
             />
 
+        <Switch
+            android:textColor="@color/foreground_dracula"
+            android:layout_marginTop="32dp"
+            android:id="@+id/switchNotificacoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Receber notificações"
+            app:layout_constraintTop_toBottomOf="@+id/button"
+            app:layout_constraintStart_toStartOf="parent"/>
+
         <ProgressBar
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintTop_toBottomOf="@id/button"/>
+            android:id="@+id/progressBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/switchNotificacoes"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp"
+            android:progress="0"
+            />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

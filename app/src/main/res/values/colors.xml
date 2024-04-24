@@ -2,9 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="pate_purple">#E5D9F2</color>
-    <color name="magnolia">#F5EFFF</color>
-    <color name="periwinkle">#CDC1FF</color>
-    <color name="tropical_indigo">#A594F9</color>
-    <color name="medium_state_blue">#7371FC</color>
+    <color name="background_dracula">#282A36</color>
+    <color name="foreground_dracula">#F8F8F2</color>
+    <color name="purple_dracula">#BD93F9</color>
 </resources>
